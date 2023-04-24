@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>            
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <link href="styles.css" rel="stylesheet"1>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column; width: 28%;">
+        <div class="twoInOne">
+            <div class="dataContainer" style="width: 45%; margin-right: 30px;">
+                <label>First Name :</label>
+                <input id="firstName" type="text">
+            </div>
+            <div class="dataContainer" style="width: 45%">
+                <label>Last Name :</label>
+                <input id="lastName" type="text">
+            </div>
+        </div>
+        <div class="dataContainer">
+            <label>Email :</label>
+            <input id="email" type="email">
+        </div>
+        <div class="dataContainer">
+            <label>Phone no. :</label>
+            <input id="phone" type="number">
+        </div>
+        <div class="twoInOne">
+            <div class="dataContainer" style="width: 45%; margin-right: 30px;">
+                <label>Age :</label>
+                <input id="age" type="number">
+            </div>
+            <div class="dataContainer" style="width: 45%">
+                <label>Date of Birth :</label>
+                <input id="dateofbirth" type="date">
+            </div>
+        </div>
+        <div class="twoInOne">
+            <div class="dataContainer" style="width: 45%; margin-right: 40px;">
+                <label>City :</label>
+                <input id="city" type="text">
+            </div>
+            <div class="dataContainer" style="width: 45%">
+                <label>Pincode :</label>
+                <input id="pincode" type="number">
+            </div>
+        </div>
+        <div class="dataContainer">
+            <label>State :</label>
+            <input id="state" type="text">
+        </div>
+        <div class="dataContainer" style="margin-top: 20px;">
+            <button id="submit" onclick="onSubmit()">Submit</button>
+            <button id="reset">Reset</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function onSubmit() {
+            const firstName = document.getElementById("firstName").value;
+            const lastName = document.getElementById("lastName").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const age = document.getElementById("age").value;
+            const dob = document.getElementById("dob").value;
+            const city = document.getElementById("city").value;
+            const pincode = document.getElementById("pincode").value;
+            const state = document.getElementById("state").value;
+            //console.log(firstName)
+
+            var xhttp = new XMLHttpRequest();
+            
+            xhttp.onload = function(data) {
+                console.log(this.responseText)
+                
+            }
+            xhttp.open("GET", firstName);
+            xhttp.send()
+        }
+    </script>
+</body>
+</html>
